@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #ff6767;
+  --primary-color-hover: #eb6161;
+  --primary-color-active: #d75858;
+  --secondary-color: #008bd9;
+  --bg-primary-color: #ffffff;
+  --light-color: #fddede;
+  --text-primary-color: #000000;
+  --text-special-color: #ffffff;
+}
