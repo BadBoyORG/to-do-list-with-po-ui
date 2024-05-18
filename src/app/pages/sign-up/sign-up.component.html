@@ -1,8 +1,134 @@
 <main class="container">
   <section class="login-section">
-    <div class="ilustration-grid">
+    <div class="ilustration-grid po-xl-6 po-lg-6 po-md-6 po-sm-6">
       <img ngSrc="./assets/login-ilustration.png" fill priority />
     </div>
-    <div class="login-grid"></div>
+    <div class="login-grid po-xl-6 po-lg-6 po-md-6 po-sm-6">
+      <div class="form-header">
+        <h2 class="form-header-title po-xl-12 po-lg-12 po-md-12 po-sm-12">
+          Cadastre-se
+        </h2>
+      </div>
+      <form [formGroup]="signUpForm" class="form-body">
+        <po-input
+          p-placeholder="Insira seu nome"
+          p-icon="po-icon po-icon-user"
+          p-required
+          [p-show-required]="true"
+          p-clean
+          formControlName="firstName"
+          class="po-xl-12 po-lg-12 po-md-12 po-sm-12"
+        />
+        <po-input
+          p-placeholder="Insira seu sobrenome"
+          p-icon="po-icon po-icon-user"
+          p-required
+          [p-show-required]="true"
+          p-clean
+          formControlName="lastName"
+          class="po-xl-12 po-lg-12 po-md-12 po-sm-12"
+        />
+        <po-input
+          p-placeholder="Insira seu apelido"
+          p-icon="po-icon po-icon-user"
+          [p-minlength]="5"
+          [p-maxlength]="20"
+          p-required
+          [p-show-required]="true"
+          p-error-pattern="apelido inválido (mín. 5 caracteres e máx. 20 caracteres)"
+          p-clean
+          formControlName="userName"
+          class="po-xl-12 po-lg-12 po-md-12 po-sm-12"
+        />
+        <po-email
+          p-placeholder="Insira seu e-mail"
+          p-required
+          [p-show-required]="true"
+          p-clean
+          p-error-pattern="E-mail inválido"
+          formControlName="email"
+          class="po-xl-12 po-lg-12 po-md-12 po-sm-12"
+        />
+        <po-password
+          p-placeholder="Insira sua senha"
+          [p-minlength]="5"
+          [p-maxlength]="20"
+          p-required
+          [p-show-required]="true"
+          p-clean
+          p-error-pattern="senha inválida (mín. 5 caracteres e máx. 20 caracteres)"
+          formControlName="password"
+          class="po-xl-12 po-lg-12 po-md-12 po-sm-12"
+        />
+        <po-password
+          p-placeholder="Confirme sua senha"
+          [p-minlength]="5"
+          [p-maxlength]="20"
+          p-required
+          [p-show-required]="true"
+          p-clean
+          formControlName="confirmPassword"
+          class="po-xl-12 po-lg-12 po-md-12 po-sm-12"
+        />
+        <div class="form-terms po-row po-xl-12 po-lg-12 po-md-12 po-sm-12">
+          <po-checkbox
+            p-label="Eu concordo com todos os"
+            formControlName="confirmTerms"
+          />
+          <po-modal
+            #modal
+            p-title="Todos os termos"
+            p-size="sm"
+            [p-hide-close]="true"
+            [p-click-out]="true"
+          >
+            <ol>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore non mollitia minima et perspiciatis, rem facilis
+                laborum? Architecto sequi, sapiente veritatis voluptates impedit
+                rerum nulla in tempora, ab velit repudiandae.
+              </li>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore non mollitia minima et perspiciatis, rem facilis
+                laborum? Architecto sequi, sapiente veritatis voluptates impedit
+                rerum nulla in tempora, ab velit repudiandae.
+              </li>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore non mollitia minima et perspiciatis, rem facilis
+                laborum? Architecto sequi, sapiente veritatis voluptates impedit
+                rerum nulla in tempora, ab velit repudiandae.
+              </li>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore non mollitia minima et perspiciatis, rem facilis
+                laborum? Architecto sequi, sapiente veritatis voluptates impedit
+                rerum nulla in tempora, ab velit repudiandae.
+              </li>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore non mollitia minima et perspiciatis, rem facilis
+                laborum? Architecto sequi, sapiente veritatis voluptates impedit
+                rerum nulla in tempora, ab velit repudiandae.
+              </li>
+            </ol>
+            <po-modal-footer>
+              <po-button p-label="Fechar" (p-click)="modal.close()" />
+            </po-modal-footer>
+          </po-modal>
+          <po-button p-label="Termos" (p-click)="modal.open()" />
+        </div>
+        <po-button
+          p-kind="primary"
+          p-label="Cadastre-se"
+          class="btn-register po-xl-12 po-lg-12 po-md-12 po-sm-12"
+        />
+      </form>
+      <p class="po-xl-12 po-lg-12 po-md-12 po-sm-12">
+        Já tem uma conta? <po-link p-label="Entrar" p-url="/"></po-link>
+      </p>
+    </div>
   </section>
 </main>
